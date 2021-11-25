@@ -1,0 +1,86 @@
+header {
+  width: 80%;
+  margin: 15px auto;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: grey;
+  border-radius: 15px;
+}
+
+nav ul {
+  display: flex;
+  margin-left: 2em;
+}
+
+nav ul li {
+  padding: 5px;
+  margin-right: 40px;
+  border: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+.container-login_carrinho {
+  display: flex;
+  /* background-color: blue; */
+  margin-right: 2em;
+  align-items: center;
+}
+
+.carrinho a {
+  margin-right: 2em;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+}
+
+.login .perfil {
+  margin-right: 2em;
+}
+
+#admin {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px 7px;
+  background-color: #e60000;
+}
+
+#admin:hover {
+  text-decoration: none;
+  opacity: 80%;
+}
+
+.login .logado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login .cadastro a:first-child::after {
+  content: '|';
+  margin-left: 5px;
+}
+
+.login input {
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+
+.login input:hover {
+  cursor: pointer;
+}
+
+.login img {
+  width: 25px;
+}
+
+.carrinho img {
+  width: 25px;
+}

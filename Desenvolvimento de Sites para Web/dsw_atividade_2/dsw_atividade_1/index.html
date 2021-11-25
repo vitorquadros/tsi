@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA</title>
+  </head>
+
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: auto;
+    }
+    form input {
+      margin-bottom: 0.8rem;
+    }
+  </style>
+
+  <body>
+    <header>
+      <div id="logo">
+        <img src="public/logo.png" alt="Logo" width="60" height="140" />
+      </div>
+
+      <nav>
+        <a href="#">Tabela</a>
+        <a href="#">Jogos da Semana</a>
+        <a href="#">Última rodada</a>
+      </nav>
+    </header>
+
+    <section id="midia">
+      <div class="video">
+        <p>Jogada da semana</p>
+        <video controls>
+          <source src="public/jogadas.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="video">
+        <p>Rewind última rodada</p>
+        <video controls>
+          <source src="public/resumo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="audio">
+        <p>Rewind última rodada - audio</p>
+        <audio controls>
+          <source src="public/audio.mp3" type="audio/mp3" />
+        </audio>
+      </div>
+    </section>
+
+    <section id="cadastro">
+      <h3>Cadastrar</h3>
+      <form action="#" onsubmit="handleSubmit()">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" required placeholder="Seu nome" />
+
+        <label for="sobrenome">Sobrenome</label>
+        <input
+          type="text"
+          name="sobrenome"
+          required
+          placeholder="Seu sobrenome"
+        />
+
+        <label for="rg">RG</label>
+        <input
+          type="text"
+          name="rg"
+          required
+          placeholder="Seu RG"
+          pattern="(^\d{1,2}).?(\d{3}).?(\d{3})-?(\d{1}|X|x$)"
+        />
+
+        <label for="cpf">CPF</label>
+        <input
+          type="text"
+          name="cpf"
+          required
+          placeholder="Seu CPF"
+          pattern="(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)"
+        />
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" required placeholder="Seu e-mail" />
+
+        <label for="celular">Celular</label>
+        <input
+          type="tel"
+          name="celular"
+          required
+          placeholder="Seu número de celular"
+          pattern="+55 53 [0-9]{5}-[0-9]{4}"
+        />
+
+        <label for="datanasc">Data de nascimento</label>
+        <input
+          type="date"
+          name="datanasc"
+          required
+          min="2002-01-01"
+          max="2021-01-01"
+        />
+
+        <label for="sobrenome">Cidade</label>
+        <input
+          type="text"
+          list="cidades"
+          name="cidades"
+          required
+          placeholder="Sua cidade"
+        />
+        <datalist id="cidades">
+          <option value="Pelotas" />
+          <option value="Rio de Janeiro" />
+          <option value="Porto Alegre" />
+          <option value="São Paulo" />
+          <option value="Florianópolis" />
+        </datalist>
+
+        <label for="cor">Cor da camisa</label>
+        <input type="color" name="cor" required / >
+
+        <label for="numero">Número da camisa</label>
+        <input
+          type="number"
+          name="numero"
+          required
+          placeholder="Número da sua camisa"
+        />
+
+        <label for="palpite">Palpite vitórias</label>
+        <input
+          type="range"
+          value="0"
+          id="palpite"
+          name="palpite"
+          required
+          min="0"
+          max="80"
+        />
+        <span id="result">0</span>
+
+        <label for="url">URL Sua jogada</label>
+        <input type="url" name="url" required placeholder="Sua jogada" />
+
+        <input
+          type="image"
+          src="public/seta.png"
+          width="50"
+          height="50"
+          alt="Enviar"
+        />
+      </form>
+    </section>
+  </body>
+
+  <script>
+    const inputPalpite = document.querySelector('#palpite');
+    const palpite = document.querySelector('#result');
+
+    inputPalpite.addEventListener('input', () => {
+      palpite.innerHTML = inputPalpite.value;
+    });
+
+    function handleSubmit() {
+      const inputs = document.querySelectorAll(
+        'form input:not([type="image"])'
+      );
+      const inputsName = Array.from(inputs).map((input) => input.name);
+
+      let obj = {};
+
+      inputsName.forEach((input, index) => {
+        obj[input] = inputs[index].value;
+      });
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      users.push(obj);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      return;
+    }
+  </script>
+</html>

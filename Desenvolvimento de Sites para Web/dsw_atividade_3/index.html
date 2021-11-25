@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/04ddab1086.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>NBA</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="logo">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.png" alt="Logo" width="150" />
+        </a>
+      </div>
+
+      <nav>
+        <a href="#">Tabela</a>
+
+        <a href="#">Jogos da Semana</a>
+
+        <a href="cadastrar.html">Cadastrar</a>
+      </nav>
+    </header>
+
+    <section id="welcome">
+      <h1>SEJA BEM VINDO!</h1>
+    </section>
+
+    <section id="midia">
+      <div class="video" id="rewind">
+        <h3>Rewind da rodada - 24/11</h3>
+        <video controls>
+          <source src="assets/resumo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="audio" id="rewind-audio">
+        <h3>Reproduza também em audio</h3>
+        <audio controls>
+          <source src="assets/audio.mp3" type="audio/mp3" />
+        </audio>
+      </div>
+
+      <div class="controllers" id="controllers-rewind">
+        <div class="previous">
+          <button><i class="fas fa-arrow-left"></i> Anterior</button>
+        </div>
+
+        <div class="next">
+          <button disabled>Próximo <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="video" id="jogada">
+        <h3>Jogadas da rodada - 24/11</h3>
+        <video controls>
+          <source src="assets/jogadas.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div id="jogadas-text">
+        <h3>As melhores da rodada</h3>
+        <p>
+          Curta as melhores jogadas da rodada e Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Iusto quas, accusantium commodi, qui
+          nesciunt porro possimus quasi id minus autem accusamus, Nam?
+        </p>
+      </div>
+
+      <div class="controllers" id="controllers-jogada">
+        <div class="previous">
+          <button><i class="fas fa-arrow-left"></i> Anterior</button>
+        </div>
+
+        <div class="next">
+          <button disabled>Próximo <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>&copy; Todos os direitos reservados</span>
+    </footer>
+  </body>
+</html>

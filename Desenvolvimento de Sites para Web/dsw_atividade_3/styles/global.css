@@ -1,0 +1,12 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.active {
+  color: #ed434c;
+}

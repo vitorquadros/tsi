@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container form input {
+  width: 400px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.container form select {
+  width: 416px;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.container form input:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.container form button {
+  width: 100px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.container form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container a {
+  margin-top: 15px;
+}

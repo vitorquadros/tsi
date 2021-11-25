@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/04ddab1086.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/cadastrar.css" />
+    <title>NBA - Cadastro</title>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.png" alt="Logo" width="150" />
+        </a>
+      </div>
+
+      <nav>
+        <a href="#">Tabela</a>
+
+        <a href="#">Jogos da Semana</a>
+
+        <a href="cadastrar.html" class="active">Cadastrar</a>
+      </nav>
+    </header>
+
+    <section id="cadastro">
+      <h3>Fazer cadastro</h3>
+      <form action="#" onsubmit="handleSubmit()">
+        <div class="input-container">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" required placeholder="Seu nome" />
+        </div>
+
+        <div class="input-container">
+          <label for="sobrenome">Sobrenome</label>
+          <input
+            type="text"
+            name="sobrenome"
+            required
+            placeholder="Seu sobrenome"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="rg">RG</label>
+          <input
+            type="text"
+            name="rg"
+            required
+            placeholder="Seu RG"
+            pattern="(^\d{1,2}).?(\d{3}).?(\d{3})-?(\d{1}|X|x$)"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="cpf">CPF</label>
+          <input
+            type="text"
+            name="cpf"
+            required
+            placeholder="Seu CPF"
+            pattern="(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" required placeholder="Seu e-mail" />
+        </div>
+
+        <div class="input-container">
+          <label for="celular">Celular</label>
+          <input
+            type="tel"
+            name="celular"
+            required
+            placeholder="Seu número de celular"
+            pattern="+55 53 [0-9]{5}-[0-9]{4}"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="datanasc">Data de nascimento</label>
+          <input
+            type="date"
+            name="datanasc"
+            required
+            min="2002-01-01"
+            max="2021-01-01"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="sobrenome">Cidade</label>
+          <input
+            type="text"
+            list="cidades"
+            name="cidades"
+            required
+            placeholder="Sua cidade"
+          />
+          <datalist id="cidades">
+            <option value="Pelotas" />
+            <option value="Rio de Janeiro" />
+            <option value="Porto Alegre" />
+            <option value="São Paulo" />
+            <option value="Florianópolis" />
+          </datalist>
+        </div>
+
+        <div class="input-container">
+          <label for="cor">Cor da camisa</label>
+          <input type="color" name="cor" required / >
+        </div>
+
+        <div class="input-container">
+          <label for="numero">Número da camisa</label>
+          <input
+            type="number"
+            name="numero"
+            required
+            placeholder="Número da sua camisa"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="palpite">Palpite vitórias</label>
+          <input
+            type="range"
+            value="0"
+            id="palpite"
+            name="palpite"
+            required
+            min="0"
+            max="80"
+          />
+        </div>
+
+        <span id="result">0</span>
+
+        <div class="input-container">
+          <label for="url">URL Sua jogada</label>
+          <input type="url" name="url" required placeholder="Sua jogada" />
+        </div>
+
+        <input
+          type="image"
+          src="assets/seta.png"
+          width="50"
+          height="50"
+          alt="Enviar"
+        />
+      </form>
+    </section>
+
+    <footer>
+      <span>&copy; Todos os direitos reservados</span>
+    </footer>
+  </body>
+
+  <script>
+    const inputPalpite = document.querySelector('#palpite');
+    const palpite = document.querySelector('#result');
+
+    inputPalpite.addEventListener('input', () => {
+      palpite.innerHTML = inputPalpite.value;
+    });
+
+    function handleSubmit() {
+      const inputs = document.querySelectorAll(
+        'form input:not([type="image"])'
+      );
+
+      let obj = {};
+
+      inputs.forEach(({ name, value }, index) => {
+        obj[name] = value;
+      });
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      users.push(obj);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      return;
+    }
+  </script>
+</html>

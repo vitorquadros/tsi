@@ -1,0 +1,40 @@
+section#cadastro {
+  width: 80%;
+  margin: auto;
+  margin-top: 2.5rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cadastro h3 {
+  font-size: 2.5rem;
+  margin: 0;
+  margin-bottom: 2rem;
+  color: #006bb6;
+  font-weight: 600;
+}
+
+.input-container {
+  width: 50rem;
+  text-align: start;
+}
+
+#cadastro form label {
+  margin-left: 0.5rem;
+}
+
+#cadastro form input:not([type='image']) {
+  margin: auto;
+  padding-left: 0.7rem;
+  display: block;
+  width: 50rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}

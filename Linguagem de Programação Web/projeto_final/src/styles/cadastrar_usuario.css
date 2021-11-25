@@ -1,0 +1,77 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 500px;
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main h3 {
+  margin: 10px 0;
+}
+
+main form input {
+  width: 80%;
+  height: 25px;
+  margin: 5px 0;
+  padding-left: 5px;
+}
+
+main form button {
+  padding: 3px 5px;
+  margin: 10px 0px;
+}
+
+main form button:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+main div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main div a {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#voltar {
+  text-decoration: none;
+}
+
+#voltar:hover {
+  text-decoration: underline;
+}
+
+#erros {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+#erros strong {
+  color: darkred;
+}
